@@ -5,8 +5,8 @@ import { ImTokenImg } from "@/components/imtoken/imtoken";
 
 export default async function Home({ params }: any) {
 
-  let data = await getData(params.amount)
-  console.log(data)
+  const data: any = await getData(params.amount)
+
   if (data.code) {
     return <p>{data.msg}</p>
   }
@@ -16,7 +16,7 @@ export default async function Home({ params }: any) {
       <BscImg {...data.data ?? {}} />
 
       <div className="mx-3">Imtoken</div>
-      <ImTokenImg {...data.data ?? {}}  />
+      <ImTokenImg {...data.data ?? {}} />
 
     </div>
   );
@@ -26,7 +26,7 @@ export default async function Home({ params }: any) {
 
 async function getData(amount: any) {
 
-console.log(amount)
+  console.log(amount)
   const res = await fetch(`https://api.sz-rykj.com/wallet/getTransDetailsByNet?amount=${amount}`, {
     headers: {
 

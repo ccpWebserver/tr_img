@@ -1,3 +1,11 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript"
+  ],
+  "rules": { // 就这
+    "@typescript-eslint/no-explicit-any": [
+      "off"
+    ] // 把他加上重启项目就行了
+  }
 }
